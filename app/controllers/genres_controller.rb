@@ -3,9 +3,6 @@ class GenresController < ApplicationController
     @genre = genre
   end
 
-  def new
-  end
-
   def create
     @genre = Genre.create(genre_params(:name))
     redirect_to @genre

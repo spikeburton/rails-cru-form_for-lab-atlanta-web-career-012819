@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
-  def new
+  def show
+    @artist = Artist.find(params[:id])
   end
 
   def create
@@ -15,10 +16,6 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     @artist.update(artist_params(:name, :bio))
     redirect_to @artist
-  end
-
-  def show
-    @artist = Artist.find(params[:id])
   end
 
   private
